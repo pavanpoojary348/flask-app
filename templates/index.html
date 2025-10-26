@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌟 Inspirational Quotes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🌟 Inspirational Quotes</h1>
+    <a href="{{ url_for('add_quote') }}" class="add-link">➕ Add a new quote</a>
+    {% if quotes %}
+        <ul>
+            {% for id, q in quotes %}
+                <li>
+                    "{{ q }}"
+                    <a href="{{ url_for('delete_quote', quote_id=id) }}" class="delete-btn">🗑 Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No quotes added yet. Be the first!</p>
+    {% endif %}
+</body>
+</html>
+
+

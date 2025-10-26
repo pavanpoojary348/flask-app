@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Quote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add a New Quote</h1>
+
+    <form method="POST">
+        <textarea name="quote" placeholder="Enter your quote here..." required></textarea><br>
+        <button type="submit">💾 Save Quote</button>
+    </form>
+
+    <a href="{{ url_for('index') }}" class="back-link">⬅ Back to Quotes</a>
+</body>
+</html>
